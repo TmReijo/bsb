@@ -10,7 +10,7 @@ function GameCtrl() {
     // ViewModel
     var vm = this;
 
-    vm.title = 'Bullshit Bingo Time!ijoawefawefawefij';
+    vm.title = 'Bullshit Bingo Time!';
     vm.number = 1234;
 
     var itemsInColumn = 5;

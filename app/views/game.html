@@ -2,6 +2,9 @@
 
 <div ng-repeat="row in game.words">
     <div class="game-word-container" ng-repeat="cell in row">
-       {{cell}}
+        <div class="game-word-outerbox">
+            <div class="game-word-text">{{cell}}
+            </div>
+        </div>
     </div>
 </div>
