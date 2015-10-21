@@ -8,11 +8,11 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider
-  .state('Home', {
+  .state('Game', {
     url: '/',
-    controller: 'ExampleCtrl as home',
-    templateUrl: 'home.html',
-    title: 'Home'
+    controller: 'GameCtrl as game',
+    templateUrl: 'game.html',
+    title: 'Play your game'
   });
 
   $urlRouterProvider.otherwise('/');

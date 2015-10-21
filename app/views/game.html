@@ -1,0 +1,7 @@
+<h1 class="heading -large">{{ game.title }}</h1>
+
+<div ng-repeat="row in game.words">
+    <div class="game-word-container" ng-repeat="cell in row">
+       {{cell}}
+    </div>
+</div>
