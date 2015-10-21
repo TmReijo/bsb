@@ -1,11 +1,11 @@
 {
-  "name": "angularjs-gulp-browserify-boilerplate",
+  "name": "Bullshitbingo",
   "version": "0.1.0",
-  "author": "Jake Marsh <jakemmarsh@gmail.com>",
-  "description": "Boilerplate using AngularJS, SASS, Gulp, and Browserify while also utilizing best practices.",
+  "author": "Juho Pentikäinen <juho.pentikainen@gofore.com",
+  "description": "Bullshitbingo for all fun events. Based on https://github.com/Hyra/angular-gulp-browserify-livereload-boilerplate.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate.git"
+    "url": "https://github.com/TmReijo/bsb"
   },
   "keywords": [
     "express",
