@@ -1,5 +1,6 @@
 'use strict';
 
+var backend = require('../../backend/server');
 var config  = require('../config');
 var http    = require('http');
 var express = require('express');
@@ -20,6 +21,13 @@ gulp.task('server', function() {
       res.sendFile('index.html', { root: 'build' });
   });
 
+  var router = express.Router();
+  server.use('/api', router);
+
+  router.route('/hello')
+      .get(function(req, res) {return res.send("hello")});
+
+
   // Start webserver if not already running
   var s = http.createServer(server);
   s.on('error', function(err){
@@ -32,5 +40,6 @@ gulp.task('server', function() {
   });
 
   s.listen(config.serverport);
+  backend.startServer();
 
 });

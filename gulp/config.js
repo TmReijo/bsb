@@ -5,6 +5,7 @@ module.exports = {
   'browserport'  : 3000,
   'uiport'       : 3001,
   'serverport'   : 3002,
+  'backendserverport'   : 3003,
 
   'styles': {
     'src' : 'app/styles/**/*.scss',

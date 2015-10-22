@@ -17,14 +17,14 @@
   margin:10%;
   border-radius: 10%;
   opacity: 1;
-  border-color: white;
-  border: solid;
 }
 
 .game-word-outerbox-deselected {
   background: $text-box-color-deselected;
+  border: dashed;
 }
 
 .game-word-outerbox-selected {
   background: $text-box-color-selected;
+  border: solid;
 }
