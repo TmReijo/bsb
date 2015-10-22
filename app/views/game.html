@@ -1,9 +1,10 @@
 <h1 class="heading -large">{{ game.title }}</h1>
 
+<div>{{game.weHaveAWinner}}</div>
 <div ng-repeat="row in game.words">
     <div class="game-word-container" ng-repeat="cell in row">
-        <div class="game-word-outerbox">
-            <div class="game-word-text">{{cell}}
+        <div ng-class="cell.selected ? 'game-word-outerbox-selected' : 'game-word-outerbox-deselected'" ng-click="game.wordClicked(cell)">
+            <div class="game-word-text">{{cell.word}}
             </div>
         </div>
     </div>

@@ -10,14 +10,21 @@
   color: rgba(0, 0, 0, 1);
 
 }
-.game-word-outerbox{
+.game-word-outerbox-deselected, .game-word-outerbox-selected{
   width:80%;
   padding-top:30%;
   padding-bottom: 30%;
   margin:10%;
   border-radius: 10%;
-  background: rgba(0, 0, 0, 0.4);
   opacity: 1;
+  border-color: white;
   border: solid;
-  border-color:grey;
+}
+
+.game-word-outerbox-deselected {
+  background: $text-box-color-deselected;
+}
+
+.game-word-outerbox-selected {
+  background: $text-box-color-selected;
 }
