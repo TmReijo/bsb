@@ -6,9 +6,13 @@ var express = require('express');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var morgan = require('morgan');
+var mongoose = require('mongoose');
+var gameController = require('../backend/controllers/games.js');
 
 
 exports.startServer = function () {
+
+    mongoose.connect(config.db_connection_string);
 
     var server = express();
 
@@ -19,6 +23,10 @@ exports.startServer = function () {
         .get(function (req, res) {
             return res.send("hello")
         });
+
+    router.route('/games')
+        .post(gameController.postGame);
+
 
     // Start webserver if not already running
     var s = http.createServer(server);

@@ -6,6 +6,7 @@ module.exports = {
   'uiport'       : 3001,
   'serverport'   : 3002,
   'backendserverport'   : 3003,
+  'db_connection_string' : 'mongodb://localhost:27017/bsb',
 
   'styles': {
     'src' : 'app/styles/**/*.scss',
