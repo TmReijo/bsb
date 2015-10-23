@@ -1,30 +1,44 @@
+
+
 .game-word-container{
   float: left;
   position: relative;
-  width: 20%;
+  width: 19%;
   text-align: center;
   vertical-align: middle;
-
+  border-bottom: 4px solid $text-box-border-color-selected;
+  border-right: 4px solid $text-box-border-color-selected;
 }
+
 .game-word-text{
   color: rgba(0, 0, 0, 1);
-
 }
 .game-word-outerbox-deselected, .game-word-outerbox-selected{
-  width:80%;
-  padding-top:30%;
-  padding-bottom: 30%;
-  margin:10%;
-  border-radius: 10%;
+  width:100%;
+  padding-top:40%;
+  padding-bottom: 40%;
+
   opacity: 1;
 }
 
+// this doesnt work
+.game-frame div:nth-child(5n) {
+  border-right: green;
+}
+
+// this works
+.game-frame div:nth-child(20) ~ div {
+  border-bottom: $text-box-border-color-deselected;
+}
+
+
+
+
 .game-word-outerbox-deselected {
   background: $text-box-color-deselected;
-  border: dashed;
 }
 
 .game-word-outerbox-selected {
   background: $text-box-color-selected;
-  border: solid;
 }
+

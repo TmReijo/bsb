@@ -1,11 +1,12 @@
-<h1 class="heading -large">{{ game.title }}</h1>
-
+<h1>Bullshit <span class="extra-visible">Bingo</span> Time!</h1>
 <div>{{game.weHaveAWinner}}</div>
-<div ng-repeat="row in game.words">
-    <div class="game-word-container" ng-repeat="cell in row">
-        <div ng-class="cell.selected ? 'game-word-outerbox-selected' : 'game-word-outerbox-deselected'" ng-click="game.wordClicked(cell)">
-            <div class="game-word-text">{{cell.word}}
-            </div>
+<div class="game-frame">
+    <div>
+    <div class="game-word-container" ng-repeat="cell in game.words">
+        <div ng-class="cell.selected ? 'game-word-outerbox-selected' : 'game-word-outerbox-deselected'"
+             ng-click="game.wordClicked(cell)">
+            <div class="game-word-text">{{cell.word}}</div>
         </div>
+    </div>
     </div>
 </div>

@@ -1,11 +1,20 @@
+@font-face {
+  font-family: 'Sigmar One', cursive;
+}
+
 p {
   margin-bottom: 1em;
+}
+
+.extra-visible {
+  color: $font-color-extra-visible;
 }
 
 .heading {
   margin-bottom: 0.618em;
 
   &.-large {
+    font-family: 'Sigmar One';
     font-size: $font-size--lg;
     font-weight: bold;
     line-height: $half-space * 3 / 2;

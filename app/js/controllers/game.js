@@ -16,19 +16,17 @@ function GameCtrl() {
     var itemsInColumn = 5;
     vm.words = [];
     for (var row = 0; row < itemsInColumn; row++) {
-        var rowArray = [];
 
         for (var column = 0; column < itemsInColumn; column++) {
             var text = "Sana " + row + column;
 
-            var word = {
+            var gameWord = {
                 word: text,
                 selected: false
             };
-            rowArray.push(word);
-            ;
+            vm.words.push(gameWord);
         }
-        vm.words.push(rowArray);
+
     }
 
     vm.checkDoWeHaveAWinner = function () {
@@ -37,7 +35,7 @@ function GameCtrl() {
         for (var row = 0; row < itemsInColumn; row++) {
             var fullRowSelected = true;
             for (column = 0; column < itemsInColumn; column++) {
-                if (!vm.words[row][column].selected)
+                if (!vm.words[row * itemsInColumn + column].selected)
                     fullRowSelected = false;
             }
             if (fullRowSelected)
@@ -48,7 +46,7 @@ function GameCtrl() {
         for (var column = 0; column < itemsInColumn; column++) {
             var fullColumnSelected = true;
             for (row = 0; row < itemsInColumn; row++) {
-                if (!vm.words[row][column].selected)
+                if (!vm.words[row * itemsInColumn + column].selected)
                     fullColumnSelected = false;
             }
             if (fullColumnSelected)
