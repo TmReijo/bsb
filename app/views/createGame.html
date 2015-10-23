@@ -1,0 +1,18 @@
+<div class="pure-g">
+    <div class="pure-u-sm-1-1">
+        <h1>Create a <span class="extra-visible">Bingo</span> Game!</h1>
+
+        <form class="pure-form game-center pure-u-sm-1-2">
+            <fieldset class="game-center game-letter-spacing heading-medium">
+                <legend>Choose a name for your game!</legend>
+                <input class="pure-u-sm-1-2" type="text" placeholder="Name here!" ng-model="name"
+                       ng-change="validateData()"/>
+                <input class="pure-button pure-button-primary pure-u-sm-1-4 game-button" type="submit" content="Start!"
+                       ng-click="start()"
+                       ng-disabled="invalidData"/>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+

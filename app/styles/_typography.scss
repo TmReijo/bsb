@@ -1,23 +1,49 @@
+
+
 @font-face {
   font-family: 'Sigmar One', cursive;
+}
+
+html *
+{
+  font-family: 'Sigmar One' !important;
 }
 
 p {
   margin-bottom: 1em;
 }
 
+
+
 .extra-visible {
+  text-shadow:
+  -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
   color: $font-color-extra-visible;
+}
+
+legend {
+  font-size:$font-size--md;
 }
 
 .heading {
   margin-bottom: 0.618em;
 
   &.-large {
+    text-shadow:
+    -1px -1px 0 $font-color-extra-visible,
+    1px -1px 0 $font-color-extra-visible,
+    -1px 1px 0 $font-color-extra-visible,
+    1px 1px 0 $font-color-extra-visible;
+
+
+
     font-family: 'Sigmar One';
     font-size: $font-size--lg;
     font-weight: bold;
-    line-height: $half-space * 3 / 2;
+    line-height: $font-size--lg;
   }
 
   &.-medium {

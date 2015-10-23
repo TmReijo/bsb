@@ -1,4 +1,19 @@
 
+.game-center {
+  display: inline-block;
+
+  width: 100%;
+}
+
+.game-button {
+  background-color: $text-box-border-color-selected;
+}
+
+.game-letter-spacing {
+
+  opacity: 0.8;
+  letter-spacing: normal;
+}
 
 .game-word-container{
   float: left;
