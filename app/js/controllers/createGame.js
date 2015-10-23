@@ -2,10 +2,12 @@
 
 var controllersModule = require('./_index');
 
+const API_URL = "/api";
+
 /**
  * @ngInject
  */
-function CreateGameCtrl($scope) {
+function CreateGameCtrl($scope, $http) {
 
     $scope.name = "";
 
@@ -15,9 +17,10 @@ function CreateGameCtrl($scope) {
         $scope.invalidData = ($scope.name == "");
     };
 
-    $scope.hello = "laa";
-
     $scope.start = function () {
+        $http.post(API_URL + '/games/', {name : $scope.name}).success(function (response) {
+            $scope.id = response;
+        });
 
     };
 }

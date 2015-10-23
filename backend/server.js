@@ -10,11 +10,9 @@ var mongoose = require('mongoose');
 var gameController = require('../backend/controllers/games.js');
 
 
-exports.startServer = function () {
+exports.setBackendStuff = function (server) {
 
     mongoose.connect(config.db_connection_string);
-
-    var server = express();
 
     var router = express.Router();
     server.use('/api', router);
@@ -28,19 +26,6 @@ exports.startServer = function () {
         .post(gameController.postGame);
 
 
-    // Start webserver if not already running
-    var s = http.createServer(server);
-    console.log('started backend server');
-    s.on('error', function (err) {
-        if (err.code === 'EADDRINUSE') {
-            gutil.log('Development server is already started at port ' + config.serverport);
-        }
-        else {
-            throw err;
-        }
-    });
-
-    s.listen(config.backendserverport);
 };
 
 

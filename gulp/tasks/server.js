@@ -16,16 +16,13 @@ gulp.task('server', function() {
   server.use(morgan('dev'));
   server.use(express.static(config.dist.root));
 
+
+  backend.setBackendStuff(server);
+
   // Serve index.html for all routes to leave routing up to Angular
   server.all('/*', function(req, res) {
-      res.sendFile('index.html', { root: 'build' });
+    res.sendFile('index.html', { root: 'build' });
   });
-
-  var router = express.Router();
-  server.use('/api', router);
-
-  router.route('/hello')
-      .get(function(req, res) {return res.send("hello")});
 
 
   // Start webserver if not already running
@@ -40,6 +37,6 @@ gulp.task('server', function() {
   });
 
   s.listen(config.serverport);
-  backend.startServer();
+
 
 });
