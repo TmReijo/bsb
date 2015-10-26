@@ -3,6 +3,7 @@ var Game = require('../models/game');
 exports.postGame = function(req, res) {
     var game = new Game();
     game.name = req.name;
+    console.log(req.body);
     game.save(function(err, newGame) {
         if (err) {
             console.log(err);
