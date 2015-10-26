@@ -52,9 +52,6 @@ function countWordFrequencies(dom, wordsAndCounts, name){
     return wordsAndCounts;
 }
 
-exports.countWordFrequencies = countWordFrequencies;
-
-
 var weights = {
     title : 10,
     label: 5,
@@ -92,9 +89,7 @@ function sortWords(wordFrequencies) {
     return array;
 }
 
-exports.sortWords = sortWords;
-
-exports.parseHtml = function(html) {
+function parseHtml (html) {
     var handler = new htmlparser.DefaultHandler(function (error, dom) {
 
     }, {
@@ -104,5 +99,13 @@ exports.parseHtml = function(html) {
     new htmlparser.Parser(handler).parseComplete(html);
     return handler.dom;
 };
+
+exports.parseWordList = function(html) {
+    var parsedHtml = parseHtml(html);
+    var mappedWords = {};
+    var mappedWords = countWordFrequencies(parsedHtml, mappedWords);
+    var sortedWords = sortWords(mappedWords);
+    return sortedWords;
+}
 
 

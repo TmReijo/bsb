@@ -7,10 +7,8 @@ exports.postAnalysis = function(req, res) {
     request(url, function(error, response, body) {
         if (error)
             throw error;
-        var parsedHtml = parser.parseHtml(body);
-        var mappedWords = {};
-        var mappedWords = parser.countWordFrequencies(parsedHtml, mappedWords);
-        var sortedWords = parser.sortWords(mappedWords);
+        var sortedWords = parser.parseWordList(body);
+
         res.send(sortedWords);
     });
 }
