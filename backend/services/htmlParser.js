@@ -8,7 +8,7 @@ var SKIP_TYPES = [
 
 var splitWords = function (string, wordsAndCounts){
 
-    var splittedWords = string.split(' ');
+    var splittedWords = string.split(/[^a-öA-Ö]+/);
 
     splittedWords.forEach (function (word) {
 
