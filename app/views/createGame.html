@@ -4,8 +4,10 @@
 
         <form class="pure-form game-center pure-u-sm-1-2">
             <fieldset class="game-center game-letter-spacing heading-medium">
-                <legend>Choose a name for your game!</legend>
+                <legend>Pick a name for your Bingo and an url where to fetch words!</legend>
                 <input class="pure-u-sm-1-2" type="text" placeholder="Name here!" ng-model="name"
+                       ng-change="validateData()"/>
+                <input class="pure-u-sm-1-2" type="text" placeholder="Url here!" ng-model="url"
                        ng-change="validateData()"/>
                 <input class="pure-button pure-button-primary pure-u-sm-1-4 game-button" type="submit" content="Start!"
                        ng-click="start()"

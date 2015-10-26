@@ -14,7 +14,7 @@ describe('Html Parser', function () {
                 result.blaa ='ngh';
                 debugger;
 
-                result = parser.mapWords(parsedHtml, result);
+                result = parser.countWordFrequencies(parsedHtml, result);
                 var fileData = JSON.stringify(result,null,2);
 
 

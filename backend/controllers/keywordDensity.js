@@ -9,7 +9,8 @@ exports.postAnalysis = function(req, res) {
             throw error;
         var parsedHtml = parser.parseHtml(body);
         var mappedWords = {};
-        var mappedWords = parser.mapWords(parsedHtml, mappedWords);
-        res.send(mappedWords);
+        var mappedWords = parser.countWordFrequencies(parsedHtml, mappedWords);
+        var sortedWords = parser.sortWords(mappedWords);
+        res.send(sortedWords);
     });
 }

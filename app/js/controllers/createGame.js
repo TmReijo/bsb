@@ -10,6 +10,7 @@ const API_URL = "/api";
 function CreateGameCtrl($scope, $http) {
 
     $scope.name = "";
+    $scope.url ="";
 
     $scope.invalidData = true;
 
@@ -18,7 +19,7 @@ function CreateGameCtrl($scope, $http) {
     };
 
     $scope.start = function () {
-        $http.post(API_URL + '/games/', {name : $scope.name}).success(function (response) {
+        $http.post(API_URL + '/games/', {name : $scope.name, url : $scope.url}).success(function (response) {
             $scope.id = response;
         });
 
