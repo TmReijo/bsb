@@ -6,38 +6,48 @@ var SKIP_TYPES = [
     'script'
 ];
 
-var splitWords = function (string, wordsAndCounts){
+var splitWords = function (string, wordsAndCounts, type){
 
     var splittedWords = string.split(/[^a-öA-Ö]+/);
 
     splittedWords.forEach (function (word) {
 
+        var counterObject;
         if(typeof wordsAndCounts[word] === 'undefined'){
-            wordsAndCounts[word] = 1;
+            counterObject = {};
         }
         else {
-            wordsAndCounts[word]++;
+            counterObject = wordsAndCounts[word];
         }
+
+        if (typeof counterObject[type] === 'undefined')
+            counterObject[type] = 1;
+        else
+            counterObject[type]++;
+
+        wordsAndCounts[word] = counterObject;
+
+
     });
     return wordsAndCounts;
 }
 
 
-function mapWords(dom, wordsAndCounts){
+function mapWords(dom, wordsAndCounts, name){
 
     _.each(dom, function(elem) {
 
         switch(elem.type) {
             case 'text':
 
-                wordsAndCounts = splitWords(elem.data, wordsAndCounts);
+                wordsAndCounts = splitWords(elem.data, wordsAndCounts, name);
 
                 break;
             default:
 
                 if (!_.include(SKIP_TYPES, elem.type)) {
                     if (elem.children) {
-                        wordsAndCounts = mapWords(elem.children, wordsAndCounts);
+                        wordsAndCounts = mapWords(elem.children, wordsAndCounts, elem.name);
 
                     }
                 }
