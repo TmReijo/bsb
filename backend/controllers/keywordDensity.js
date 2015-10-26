@@ -3,8 +3,8 @@ var request = require('request');
 
 exports.postAnalysis = function(req, res) {
 
-    console.log(req.name);
-    request("http://fi.wikipedia.org/wiki/August_Langhoff", function(error, response, body) {
+    var url = req.body.url;
+    request(url, function(error, response, body) {
         if (error)
             throw error;
         var parsedHtml = parser.parseHtml(body);

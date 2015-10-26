@@ -81,6 +81,7 @@
     "protractor": "npm run protractor test/protractor.conf.js"
   },
   "dependencies": {
+    "body-parser": "^1.14.1",
     "htmlparser": "^1.7.7",
     "mongoose": "^4.1.12",
     "underscore": "^1.8.3"
