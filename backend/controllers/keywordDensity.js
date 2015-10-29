@@ -1,6 +1,8 @@
 var parser = require('../services/htmlParser');
 var request = require('request');
 
+
+// this is most likely unnecessary stuff...
 exports.postAnalysis = function(req, res) {
 
     var url = req.body.url;

@@ -36,18 +36,13 @@
   opacity: 1;
 }
 
-// this doesnt work
 .game-frame div:nth-child(5n) {
   border-right: green;
 }
 
-// this works
 .game-frame div:nth-child(20) ~ div {
   border-bottom: $text-box-border-color-deselected;
 }
-
-
-
 
 .game-word-outerbox-deselected {
   background: $text-box-color-deselected;

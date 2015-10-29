@@ -24,8 +24,10 @@ p {
   color: $font-color-extra-visible;
 }
 
-legend {
-  font-size:$font-size--md;
+legend h1 {
+  !important;
+  font-size:$font-size--lg;
+  color: pink;
 }
 
 .heading {
